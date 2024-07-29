@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+  <title>Bird Sightings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .bird-entry {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    .bird-entry img {
+      max-width: 100px;
+      max-height: 100px;
+      margin-right: 20px;
+      border-radius: 50%;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .bird-info {
+      flex-grow: 1;
+    }
+    .bird-info h2 {
+      margin: 0 0 10px;
+      font-size: 1.5em;
+      color: #4CAF50;
+    }
+    .bird-info p {
+      margin: 5px 0;
+      font-size: 1em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bird Sightings</h1>
+  </header>
+  <div class="container">
+    {% for entry in birds %}
+    <div class="bird-entry">
+      <img src="data:image/png;base64, {{ entry.image }}" alt="{{ entry.name }}" />
+      <div class="bird-info">
+        <h2>{{ entry.name }}</h2>
+        <p><strong>Date:</strong> {{ entry.date }}</p>
+        <p><strong>Location:</strong> {{ entry.location }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</body>
+</html>
