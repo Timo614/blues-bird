@@ -1,17 +1,17 @@
-cargo add sqlx shuttle-shared-db --features sqlx/macros,shuttle-shared-db/postgres,shuttle-shared-db/sqlx
-cargo install sqlx-cli
+## Blues bird project
 
-rustup component add rustfmt
-rustup component add clippy
+This server was created as a simple demonstration of an Axum server running on Shuttle.rs. It's used for my birds project on Hackster.io. More information can be seen there. I'll update here with additional links once it is published.
 
-sqlx migrate add create_users
-sqlx migrate add create_images
+## Generating an API Key
 
-## Docker
-https://docs.docker.com/engine/install/ubuntu/
-
-# https://docs.docker.com/engine/install/linux-postinstall/
-sudo usermod -aG docker $USER
-
-
+Run the following to generate an API key:
+```
 python3 -c 'import secrets, string; print("API Secret:", "".join(secrets.choice(string.ascii_letters + string.digits + string.punctuation) for _ in range(64)))'
+```
+
+Create a file Secrets.toml with the following content:
+```
+API_KEY = "YOUR API SECRET HERE"
+```
+
+This file is ignored from git via the `.gitignore` file in the repository.
