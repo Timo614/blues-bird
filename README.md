@@ -1,6 +1,6 @@
 ## Blues bird project
 
-This server was created as a simple demonstration of an Axum server running on Shuttle.rs. It's used for my birds project on Hackster.io. More information can be seen there. I'll update here with additional links once it is published.
+This server was created as a simple demonstration of an Axum server running on Shuttle.rs. It's used for my birds project on Hackster.io. More information can be seen there: https://www.hackster.io/projects/b8b705
 
 ## Generating an API Key
 
